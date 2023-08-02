@@ -30,4 +30,10 @@ interface ApiService {
        @Query("page") page: Int?,
        @Query("keyword") keyword:  String
    ): Wallpaper
+
+   @GET("popular")
+   suspend fun getPopularFromApi(@Query("page") page: Int?):  Wallpaper
+
+   @GET("latest")
+   suspend fun getRandomFromApi(@Query("page") page: Int?):  Wallpaper
 }
