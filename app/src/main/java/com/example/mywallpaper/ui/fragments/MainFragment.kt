@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentActivity
-import com.example.mywallpaper.R
 import com.example.mywallpaper.databinding.FragmentMainBinding
 import com.example.mywallpaper.ui.adapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
@@ -18,8 +17,8 @@ class MainFragment : Fragment() {
    private lateinit var binding: FragmentMainBinding
 
    private val fragments =
-       listOf(HomeFragment(), PopularFragment(), RandomFragment(), CategoriesFragment())
-   private val tabTitles = listOf("Home", "Popular", "Random", "Category")
+       listOf(NewFragment(), PopularFragment(), RandomFragment(), CategoriesFragment())
+   private val tabTitles = listOf("New", "Popular", "Random", "Category")
 
    override fun onCreateView(
        inflater: LayoutInflater, container: ViewGroup?,

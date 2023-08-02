@@ -96,4 +96,6 @@ dependencies {
     // Paging
     def paging_version = "3.1.1"
     implementation("androidx.paging:paging-runtime:$paging_version")
+    //progress bar
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 }

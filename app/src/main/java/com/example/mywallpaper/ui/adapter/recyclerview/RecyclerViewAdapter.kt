@@ -18,7 +18,7 @@ import com.example.mywallpaper.ui.adapter.recyclerview.common.BlurHashDecoder
  * @data : 02.08.2023
  */
 
-class RecyclerViewAdapter() :
+class RecyclerViewAdapter(private val listener: WallInteractionListener) :
     PagingDataAdapter<Data, RecyclerViewAdapter.MyViewHolder>(DiffUtilCallBack()) {
 
    override fun onBindViewHolder(holder: RecyclerViewAdapter.MyViewHolder, position: Int) {
@@ -49,6 +49,10 @@ class RecyclerViewAdapter() :
              .transition(BitmapTransitionOptions.withCrossFade(80))
              .error(blurHashAsDrawable)
              .into(binding.imageView)
+
+         itemView.setOnClickListener {
+            listener.onClickItem(data, it)
+         }
 
       }
 
