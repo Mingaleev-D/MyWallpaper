@@ -1,80 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.fragments.MainFragment">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_25sdp"
-        android:background="@color/main_background"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:elevation="0dp">
+    <data>
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collapsing"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_88sdp"
-            app:collapsedTitleTextAppearance="@style/Toolbar.TitleText.collapse"
-            app:expandedTitleGravity="center_vertical|center_horizontal|bottom"
-            app:expandedTitleTextAppearance="@style/Toolbar.TitleText.expanded"
-            app:expandedTitleTextColor="@color/white"
-            app:layout_scrollFlags="scroll|enterAlways|snap|snapMargins"
-            app:titleCollapseMode="fade">
+    </data>
 
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:contentScrim="@color/white"
-                app:navigationContentDescription="menu" />
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/container"
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/main_background"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        app:layout_constraintTop_toBottomOf="@+id/collapsing">
+        tools:context=".ui.fragments.MainFragment">
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tabLayout"
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/arial_rounded_mt_regular"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tabGravity="center"
             android:background="@color/main_background"
-            app:tabIndicator="@drawable/tab_indicator"
-            app:tabIndicatorColor="@color/background"
-            app:tabIndicatorGravity="center"
-            app:tabIndicatorHeight="@dimen/_30sdp"
-            app:tabRippleColor="@null"
-            app:tabIndicatorFullWidth="true"
-            app:tabSelectedTextColor="@color/white"
-            app:tabTextAppearance="@style/Tab"
-            app:tabTextColor="@color/gray" />
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:elevation="2dp">
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewPager"
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_88sdp"
+                app:collapsedTitleTextAppearance="@style/Toolbar.TitleText.collapse"
+                app:expandedTitleGravity="center_vertical|center_horizontal|bottom"
+                app:expandedTitleTextAppearance="@style/Toolbar.TitleText.expanded"
+                app:expandedTitleTextColor="@color/white"
+                app:layout_scrollFlags="scroll|enterAlways|snap|snapMargins"
+                app:titleCollapseMode="fade">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:contentScrim="@color/white"
+                    app:navigationContentDescription="menu" />
+
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/searchIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_30sdp"
+                    android:layout_gravity="end"
+                    android:src="@drawable/ic_baseline_search_24"
+                    android:layout_marginEnd="16dp" />
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@drawable/home"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+            android:layout_height="match_parent"
+            android:background="@color/main_background"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+            app:layout_constraintTop_toBottomOf="@+id/collapsing">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/arial_rounded_mt_regular"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tabGravity="center"
+                android:background="@color/main_background"
+                app:tabIndicator="@drawable/tab_indicator"
+                app:tabIndicatorColor="@color/background"
+                app:tabIndicatorGravity="center"
+                app:tabIndicatorHeight="@dimen/_30sdp"
+                app:tabRippleColor="@null"
+                app:tabIndicatorFullWidth="true"
+                app:tabSelectedTextColor="@color/white"
+                app:tabTextAppearance="@style/Tab"
+                app:tabTextColor="@color/gray" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/home"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
