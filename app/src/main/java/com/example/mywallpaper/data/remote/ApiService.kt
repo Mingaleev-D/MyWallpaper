@@ -18,4 +18,10 @@ interface ApiService {
    suspend fun getCategoryToViewPager(
        @Query("category") category: String
    ):  Wallpaper
+
+   @GET("category")
+   suspend fun getCategoryFromApi(
+       @Query("page") page: Int?,
+       @Query("category") category: String
+   ): Wallpaper
 }

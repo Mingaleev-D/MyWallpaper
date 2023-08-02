@@ -18,6 +18,13 @@
             app:popEnterAnim="@anim/from_left"
             app:popExitAnim="@anim/to_right"
             app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_mainFragment_to_specificCategoryFragment"
+            app:destination="@id/specificCategoryFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right"/>
     </fragment>
     <fragment
         android:id="@+id/viewPagerFragment"
@@ -39,5 +46,20 @@
         <argument
             android:name="imageData"
             app:argType="string[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/specificCategoryFragment"
+        android:name="com.example.mywallpaper.ui.fragments.SpecificCategoryFragment"
+        android:label="SpecificCategoryFragment" >
+        <action
+            android:id="@+id/action_specificCategoryFragment_to_downloadFragment"
+            app:destination="@id/downloadFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out"/>
+        <argument
+            android:name="categoryName"
+            app:argType="string" />
     </fragment>
 </navigation>

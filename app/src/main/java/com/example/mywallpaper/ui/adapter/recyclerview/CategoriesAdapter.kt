@@ -16,6 +16,7 @@ import com.example.mywallpaper.databinding.CategoryRowBinding
 
 class CategoriesAdapter(
     private val category: List<Category>,
+    private val listener: CategoryInteractionListener
 ) : RecyclerView.Adapter<CategoriesAdapter.CategoryViewHolder>() {
 
    class CategoryViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -37,6 +38,9 @@ class CategoriesAdapter(
              .centerCrop()
              .error(R.color.babyBlue)
              .into(categoryImageView)
+      }
+      holder.itemView.setOnClickListener {
+         listener.onClickCategory(currentCategory, it)
       }
 
    }
