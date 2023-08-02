@@ -11,6 +11,7 @@ import androidx.navigation.Navigation
 import androidx.paging.CombinedLoadStates
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.mywallpaper.R
 import com.example.mywallpaper.data.remote.model.Data
 import com.example.mywallpaper.databinding.FragmentNewBinding
 import com.example.mywallpaper.ui.adapter.loadingState.LoadStateAdapter
@@ -67,7 +68,7 @@ abstract class BaseFragment : Fragment(), WallInteractionListener {
                        ?: loadStates.source.prepend as? LoadState.Error
 
       errorState?.let {
-         Toast.makeText(context, "try again later", Toast.LENGTH_LONG).show()
+         Toast.makeText(context, getString(R.string.no_internet), Toast.LENGTH_LONG).show()
       }
    }
 
@@ -76,9 +77,6 @@ abstract class BaseFragment : Fragment(), WallInteractionListener {
       Navigation.findNavController(view)
           .navigate(
               MainFragmentDirections.actionMainFragmentToViewPagerFragment(imageData)
-              //                MainFragmentDirections.actionTestFragmentToDownloadFragment(
-              //                    imageData
-              //                )
           )
    }
 

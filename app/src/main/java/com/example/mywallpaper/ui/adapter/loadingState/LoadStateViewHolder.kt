@@ -1,5 +1,6 @@
 package com.example.mywallpaper.ui.adapter.loadingState
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isVisible
@@ -24,9 +25,10 @@ class LoadStateViewHolder (
       }
    }
 
+   @SuppressLint("SetTextI18n")
    fun bind(loadState: LoadState){
       if (loadState is LoadState.Error){
-         binding.errorMsg.text = "please try again later"
+         binding.errorMsg.text = "please repeat again"
       }
       binding.progressBar.isVisible = loadState is LoadState.Loading
       binding.retryButtonItem.isVisible = loadState !is LoadState.Loading

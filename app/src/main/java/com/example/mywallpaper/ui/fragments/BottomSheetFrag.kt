@@ -75,10 +75,11 @@ class BottomSheetFrag(private val wallUrl :String) : BottomSheetDialogFragment()
 
          }
          downloadManager.enqueue(request)
-         Toast.makeText(context, "Downloading...", Toast.LENGTH_LONG).show()
+         Toast.makeText(context, getString(R.string.downloading), Toast.LENGTH_LONG).show()
 
       } catch (e: java.lang.Exception) {
-         Toast.makeText(context, "Image Download Failed ${e.message}", Toast.LENGTH_LONG).show()
+         Toast.makeText(context,
+                        getString(R.string.image_download_failed, e.message), Toast.LENGTH_LONG).show()
       }
 
    }
@@ -92,11 +93,11 @@ class BottomSheetFrag(private val wallUrl :String) : BottomSheetDialogFragment()
             val image = activity?.findViewById<ShapeableImageView>(R.id.download_image_view)
 
             if (image?.drawable == null) {
-               Toast.makeText(context, "Wait to loading", Toast.LENGTH_LONG).show()
+               Toast.makeText(context, getString(R.string.wait_to_loading), Toast.LENGTH_LONG).show()
             } else {
                val bitmap = (image.drawable as BitmapDrawable).bitmap
                wallpaperManager.setBitmap(bitmap, null, true, LockOrBackGround)
-               Toast.makeText(context, "DONE", Toast.LENGTH_LONG).show()
+               Toast.makeText(context, getString(R.string.done), Toast.LENGTH_LONG).show()
             }
 
          } catch (e: IOException) {
