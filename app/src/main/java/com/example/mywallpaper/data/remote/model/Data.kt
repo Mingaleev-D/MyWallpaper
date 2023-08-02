@@ -25,7 +25,7 @@ data class Data(
     @SerializedName("r")
     val r: R?,
     @SerializedName("smallImageUrl")
-    val smallImageUrl: String?,
+    var smallImageUrl: String?,
     @SerializedName("updatedAt")
     val updatedAt: String?,
     @SerializedName("__v")

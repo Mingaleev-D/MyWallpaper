@@ -9,5 +9,34 @@
         android:id="@+id/mainFragment"
         android:name="com.example.mywallpaper.ui.fragments.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_viewPagerFragment"
+            app:destination="@id/viewPagerFragment"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left"
+            app:popEnterAnim="@anim/from_left"
+            app:popExitAnim="@anim/to_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPagerFragment"
+        android:name="com.example.mywallpaper.ui.fragments.viewpagerTrasation.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager">
+        <argument
+            android:name="imageData"
+            app:argType="string[]" />
+        <action
+            android:id="@+id/action_viewPagerFragment_to_downloadFragment"
+            app:destination="@id/downloadFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/downloadFragment"
+        android:name="com.example.mywallpaper.ui.fragments.DownloadFragment"
+        android:label="fragment_download"
+        tools:layout="@layout/fragment_download">
+        <argument
+            android:name="imageData"
+            app:argType="string[]" />
+    </fragment>
 </navigation>
