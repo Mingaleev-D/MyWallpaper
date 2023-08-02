@@ -11,6 +11,7 @@ import com.bumptech.glide.load.resource.bitmap.BitmapTransitionOptions
 import com.example.mywallpaper.R
 import com.example.mywallpaper.data.remote.model.Data
 import com.example.mywallpaper.databinding.ItemRecyclerViewBinding
+import com.example.mywallpaper.ui.adapter.recyclerview.common.BlurHashDecoder
 
 /**
  * @author : Mingaleev.D
@@ -38,14 +39,16 @@ class RecyclerViewAdapter() :
 
       fun bind(data: Data) {
 
+         val blurHashAsDrawable = BlurHashDecoder.blurHashBitmap(itemView.resources, data)
+
          Glide.with(itemView.context)
              .asBitmap()
              .load(data.smallImageUrl)
+             .placeholder(blurHashAsDrawable)
              .centerCrop()
              .transition(BitmapTransitionOptions.withCrossFade(80))
-             .error(R.drawable.baseline_error_24)
+             .error(blurHashAsDrawable)
              .into(binding.imageView)
-
 
       }
 
