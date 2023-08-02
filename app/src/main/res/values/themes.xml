@@ -29,4 +29,13 @@
         <item name="textAllCaps">false</item>
         <item name="android:textStyle">bold</item>
     </style>
+
+    <style name="roundedImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/_20sdp</item>
+    </style>
+
+    <style name="Image">
+        <item name="android:gradientRadius">@dimen/_10ssp</item>
+    </style>
 </resources>
