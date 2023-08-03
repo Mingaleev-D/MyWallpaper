@@ -1,8 +1,25 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.MyWallpaper" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.MyWallpaper" parent="Theme.Material3.Dark.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/main_background</item>
+        <item name="colorPrimaryVariant">@color/main_background</item>
+        <item name="colorOnPrimary">@color/main_background</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/main_background</item>
+        <!-- Status bar color. -->
+        <item name="fontFamily">@font/arlrdbd</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:textSize">10sp</item>
+        <item name="hideOnScroll">true</item>
+        <item name="android:windowContentTransitions">true</item>
+
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
     </style>
 
     <style name="Theme.MyWallpaper" parent="Base.Theme.MyWallpaper" />
@@ -37,5 +54,15 @@
 
     <style name="Image">
         <item name="android:gradientRadius">@dimen/_10ssp</item>
+    </style>
+
+    <style name="splashScreenTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@mipmap/ic_launcher</item>
+        <item name="fontFamily">@font/arial_rounded_mt_regular</item>
+        <item name="android:statusBarColor">@color/main_background</item>
+
+        <item name="android:windowContentTransitions">true</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
     </style>
 </resources>

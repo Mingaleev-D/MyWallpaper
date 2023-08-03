@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentActivity
+import androidx.navigation.fragment.findNavController
+import com.example.mywallpaper.R
 import com.example.mywallpaper.databinding.FragmentMainBinding
 import com.example.mywallpaper.ui.adapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
@@ -29,6 +31,10 @@ class MainFragment : Fragment() {
       initViewPager()
       initTabLayout()
       initToolBar()
+
+      binding.searchIcon.setOnClickListener{
+        findNavController().navigate(R.id.action_mainFragment_to_searchFragment)
+      }
 
       return binding.root
    }

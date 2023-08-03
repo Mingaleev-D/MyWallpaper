@@ -12,4 +12,6 @@
     <string name="downloading">Downloading...</string>
     <string name="wait_to_loading">Wait to loading</string>
     <string name="done">DONE</string>
+    <string name="search">search\n</string>
+    <string name="New">New</string>
 </resources>
