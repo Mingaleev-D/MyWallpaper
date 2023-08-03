@@ -2,4 +2,16 @@
     <string name="app_name">MyWallpaper</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Categories">Categories</string>
+    <string name="retry">retry</string>
+    <string name="download_image">download image\n</string>
+    <string name="set_as_background">set as background</string>
+    <string name="set_as_lockscreen">set as lockscreen</string>
+    <string name="no_internet">no internet</string>
+    <string name="image_download_failed">Image Download Failed %1$s</string>
+    <string name="downloading">Downloading...</string>
+    <string name="wait_to_loading">Wait to loading</string>
+    <string name="done">DONE</string>
+    <string name="search">search\n</string>
+    <string name="New">New</string>
 </resources>
